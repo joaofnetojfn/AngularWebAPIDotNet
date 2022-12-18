@@ -1,0 +1,293 @@
+<div class="container p-5" *ngIf="visibilidadeTabela">
+  <div class="border boder-light rounded p-5">
+    <div class="d-flex justify-content-end">
+      <button
+        type="button"
+        class="btn btn-sm btn-primary"
+        (click)="ExibirFormularioCadastro()"
+      >
+        Cadastrar Cliente
+      </button>
+      <!-- <button
+        type="button"
+        class="btn btn-sm btn-primary"
+        style="display: flex; margin: auto"
+      >
+        <a class="btn btn-sm btn-primary" routerLink="/pessoas"
+          >Tela de Pessoa</a
+        >
+      </button> -->
+    </div>
+
+    <hr />
+
+    <table
+      class="table table-striped table-hover table-bordered table-sm"
+      *ngIf="pessoas"
+    >
+      <tr class="thead-light">
+        <th style="text-align: center">Nome</th>
+        <th style="text-align: center">Idade</th>
+        <th style="text-align: center">CPF</th>
+        <th style="text-align: center">Profissao</th>
+        <th style="text-align: center">Ações</th>
+      </tr>
+
+      <tr *ngFor="let pessoa of pessoas">
+        <td style="text-align: center">{{ pessoa.nome }}</td>
+        <td style="text-align: center">{{ pessoa.idade }}</td>
+        <td style="text-align: center">{{ pessoa.cpf }}</td>
+        <td style="text-align: center">{{ pessoa.profissao }}</td>
+        <td style="text-align: center">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-info"
+            (click)="ExibirFormulario(pessoa.pessoaId)"
+          >
+            Atualizar
+          </button>
+          |
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-danger"
+            (click)="
+              ExibirConfirmacaoExclusao(
+                pessoa.pessoaId,
+                pessoa.nome,
+                conteudoModal
+              )
+            "
+          >
+            Excluir
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div *ngIf="infoGit">
+    <section style="background-color: #f1f1f1">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-8">
+            <div class="card" style="border-radius: 15px">
+              <div class="card-body p-4">
+                <div class="d-flex text-black">
+                  <div class="flex-shrink-0">
+                    <img
+                      src="{{ infoGit.avatar_url }}"
+                      alt="Avatar"
+                      class="img-fluid"
+                      style="width: 180px; border-radius: 10px"
+                    />
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h5 class="d-flex m-1 justify-content-center">
+                      {{ infoGit.name }}
+                    </h5>
+
+                    <div
+                      class="d-flex justify-content-around rounded-3 p-2 mb-2"
+                      style="background-color: #efefef"
+                    >
+                      <span
+                        style="
+                          display: flex;
+                          /* align-content: stretch; */
+                          align-items: center;
+                        "
+                        ><b>Informação do GitHub:</b></span
+                      >
+                      <div>
+                        <p class="small text-muted mb-1">Repositories</p>
+                        <p class="mb-0 ml-3">{{ infoGit.public_repos }}</p>
+                      </div>
+
+                      <div>
+                        <p class="small text-muted ml-3 mb-1">Segue</p>
+                        <p class="mb-0 ml-4">{{ infoGit.following }}</p>
+                      </div>
+                      <div>
+                        <p class="small text-muted ml-3 mb-1">Seguidores</p>
+                        <p class="mb-0 ml-4">{{ infoGit.followers }}</p>
+                      </div>
+                    </div>
+                    <div class="d-flex pt-1">
+                      <button
+                        type="button"
+                        (click)="RedirectLInk(infoGit.html_url)"
+                        class="btn btn-outline-primary me-1 flex-grow-1"
+                      >
+                        GitHub
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary flex-grow-1"
+                        (click)="RedirectLInk(infoGit.blog)"
+                      >
+                        Linkedin
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="container p-5" *ngIf="visibilidadeFormulario">
+  <div class="row">
+    <div
+      class="col-6 border boder-light rounded p-5 shadow"
+      style="margin: auto"
+      *ngIf="formulario"
+    >
+      <h6>{{ tituloFormulario }}</h6>
+      <hr />
+
+      <form [formGroup]="formulario">
+        <div class="form-group">
+          <label>Nome</label>
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            formControlName="nome"
+          />
+        </div>
+        <div class="form-group">
+          <label>Sobrenome</label>
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            formControlName="sobrenome"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Nascimento</label>
+          <input
+            type="datetime-local"
+            class="form-control form-control-sm"
+            formControlName="nascimento"
+            (blur)="CalcularIdade(nascimento)"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Idade</label>
+          <input
+            type="number"
+            class="form-control form-control-sm"
+            formControlName="idade"
+            disabled
+          />
+        </div>
+        <div class="form-group">
+          <label>CPF</label>
+          <input
+            type="text"
+            name="cpf"
+            maxlength="11"
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+            class="form-control form-control-sm"
+            formControlName="cpf"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Profissão</label>
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            formControlName="profissao"
+          />
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div>
+              <button
+                type="submit"
+                class="btn btn-sm btn-outline-secondary"
+                *ngIf="controlBtn == 1"
+                (click)="EnviarFormulario(conteudoModalAtualizaSucesso)"
+              >
+                Atualizar
+              </button>
+              <button
+                type="submit"
+                class="btn btn-sm btn-outline-secondary"
+                *ngIf="controlBtn == 0"
+                (click)="EnviarFormulario(conteudoModalInsertSucesso)"
+              >
+                Salvar
+              </button>
+            </div>
+            <div class="pl-1">
+              <button
+                type="button"
+                class="btn btn-sm btn-light"
+                (click)="Voltar()"
+              >
+                Voltar
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<ng-template #conteudoModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Confirmação de Exclusão</h4>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">Prosseguir com a exclusão do(a) {{ nomePessoa }}</div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modalRef.hide()">
+      Não
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-danger"
+      (click)="ExcluirPessoa(pessoaId, conteudoModalExcluidoSucesso)"
+    >
+      Sim
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #conteudoModalAtualizaSucesso>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Atualizado com Sucesso.</h4>
+  </div>
+  <div class="modal-body">Atualizado para: {{ nomePessoa }}</div>
+</ng-template>
+
+<ng-template #conteudoModalInsertSucesso>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Cadastrado com Sucesso.</h4>
+  </div>
+  <div class="modal-body">Cadastrado com o nome: {{ nomePessoa }}</div>
+</ng-template>
+
+<ng-template #conteudoModalExcluidoSucesso>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Cadastrado com Sucesso.</h4>
+  </div>
+  <div class="modal-body">Cadastrado com o nome: {{ nomePessoa }}</div>
+</ng-template>
