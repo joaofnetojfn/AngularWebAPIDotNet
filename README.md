@@ -56,7 +56,6 @@ $ cd AngularWebAPIDotNet/AppAngular/
 
 # Rode a aplicação front-end
 $ npm i
-$ npm add ngx-bootstrap
 $ npx ng serve
 
 #Abra outra terminal navegue até a pasta do back-end
