@@ -25,27 +25,27 @@ namespace CRUDAPI {
         public void ConfigureServices (IServiceCollection services) {
             services.AddDbContext<Contexto> (opcoes => opcoes.UseSqlServer (Configuration.GetConnectionString ("ConexaoBD")));
 
-            services.AddCors ();
+            services.AddCors();
 
-            services.AddControllers ();
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure (IApplicationBuilder app, IWebHostEnvironment env) {
-            if (env.IsDevelopment ()) {
-                app.UseDeveloperExceptionPage ();
+            if (env.IsDevelopment()) {
+                app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection ();
+            app.UseHttpsRedirection();
 
-            app.UseRouting ();
+            app.UseRouting();
 
             app.UseCors(opcoes => opcoes.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
-            app.UseAuthorization ();
+            app.UseAuthorization();
 
             app.UseEndpoints (endpoints => {
-                endpoints.MapControllers ();
+                endpoints.MapControllers();
             });
         }
     }

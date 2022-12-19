@@ -37,6 +37,8 @@
 
 - Crud de Clientes feito em Angular com DotNet
 
+* Rquisitos DotNet 3.1, nodeJs e SQLServer
+
 # :construction_worker: Como rodar
 
 ````bash
@@ -51,11 +53,13 @@ $ cd AngularWebAPIDotNet/AppAngular/
 
 
 # Rode a aplicação front-end
-$  npx 
-$  ng serve
+$  npm i
+$ npx ng serve
 
 #Abra outra terminal navegue até a pasta do back-end
 $ cd AngularWebAPIDotNet/CRUDAPI/
+
+#Rquisitos DotNet 3.1, nodeJs e SQLServer
 
 #Rode a aplicação back-end
 $ dotnet run
