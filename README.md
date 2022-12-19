@@ -33,37 +33,29 @@
 
 </div>
 
-# :computer: Tecnologias
-
-Esse projeto foi feito utilizando as seguintes tecnologias:
-
-<!-- - [Typescript](https://www.typescriptlang.org/)
-- [React](https://reactjs.org/)
-- [Expo](https://expo.io/)
-- [Express](https://expressjs.com/) -->
-
 # :rocket: Funcionalidades
 
-- Crud de Clieente feito em Angular com DotNet
+- Crud de Clientes feito em Angular com DotNet
 
 # :construction_worker: Como rodar
 
 ````bash
-# Clone o Repositoria
+# Clone o Repositorio
 $ git clone https://github.com/joaofnetojfn/AngularWebAPIDotNet
 
 ### 💻 Rode o Project Web
 
 ```bash
 # Vá para a pasta web
-$ cd AppAngular/
+$ cd AngularWebAPIDotNet/AppAngular/
 
 
 # Rode a aplicação front-end
+$  npx 
 $  ng serve
 
 #Abra outra terminal navegue até a pasta do back-end
-$ cd CRUDAPI/
+$ cd AngularWebAPIDotNet/CRUDAPI/
 
 #Rode a aplicação back-end
 $ dotnet run
@@ -91,7 +83,6 @@ Lançado em 2022 :closed_book: Licencia
 Feito com amor por [JoãoFerreiraNeto](https://github.com/joaofnetojfn) 🚀.
 Esse projeto esta sobre [MIT license](./LICENSE).
 
-D
 <br/> :email: &nbsp; Entre em contato comigo: [![Linkedin Badge](https://img.shields.io/badge/-JoaoFerreira-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/joaoferreiraneto/)](https://www.linkedin.com/in/joaoferreiraneto/)
 [![Gmail Badge](https://img.shields.io/badge/-joaofnetojfn@hotmail.com-c14438?style=flat-square&logo=Hotmail&logoColor=white&link=mailto:joaofnetojfn@hotamil.com)](mailto:joaofnetojfn@hotmail.com)
 
