@@ -1,4 +1,5 @@
-# Angular WebApi ASP .Net
+<h1 align="center">
+# Angular WebApi ASP .Net </h1>
 
 <p align="center"><img width="auto" src="https://avatars1.githubusercontent.com/u/20828243?s=460&u=6b7db156aa91f513ca4b58f3bcc32efea1eaceaa&v=4"></p>
 
@@ -11,7 +12,7 @@
 	🚧  Status: Em construção...  🚧
   </h4>
 
-<p align="center">:rocket:🚀  Projeto feito para conectar professores e estudantes, feito na Next Level Week #2 @Rocketseat</p>
+</p>
 
 <p align="center">
     ·
@@ -20,8 +21,7 @@
 
 <div align="center">
   <sub>Construído por
-    <a href="https://github.com/joaofnetojfn">João Ferreira Neto</a> and
-
+    <a href="https://github.com/joaofnetojfn">João Ferreira Neto</a> 
   </sub>
 </div>
 
@@ -50,22 +50,29 @@ Esse projeto foi feito utilizando as seguintes tecnologias:
 
 ````bash
 # Clone o Repositoria
-$ git clone
+$ git clone https://github.com/joaofnetojfn/AngularWebAPIDotNet
 
 ### 💻 Rode o Project Web
 
 ```bash
 # Vá para a pasta web
-$ cd
-
-# Instale as depedencias
+$ cd AppAngular/
 
 
-# Rode a aplicação
+# Rode a aplicação front-end
+$  ng serve
 
+#Abra outra terminal navegue até a pasta do back-end
+$ cd CRUDAPI/
+
+#Rode a aplicação back-end
+$ dotnet run
 ````
 
-<!-- Acesse: http://localhost:3000/ para ver o resultado. -->
+Acesse: http://localhost:4200/pessoas para ver o resultado.
+
+[LocalDb](https://github.com/dbeaver/dbeaver/issues/2959)
+[Migrations](https://www.youtube.com/watch?v=sYLfDaDQdm4)
 
 # :tada: Contribuindo
 
@@ -73,7 +80,7 @@ Confira a página de [contribuição](./CONTRIBUTING.md) para ver como começar 
 
 # :closed_book: Licencia
 
-Lançado em 2020 :closed_book: Licencia
+Lançado em 2022 :closed_book: Licencia
 
 Feito com amor por [JoãoFerreiraNeto](https://github.com/joaofnetojfn) 🚀.
 Esse projeto esta sobre [MIT license](./LICENSE).
