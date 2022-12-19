@@ -27,17 +27,19 @@
 
 <h2 align="left"> 📥 Layout disponivel para download em: </h2>
 
-### Web Screenshot
+<!-- ### Web Screenshot
 
 <div style="display: flex; flex-direction: 'row'; align-items: 'center';">
 
-</div>
+</div> -->
 
 # :rocket: Funcionalidades
 
 - Crud de Clientes feito em Angular com DotNet
 
-* Rquisitos DotNet 3.1, nodeJs e SQLServer
+# Requisito
+
+- Rquisitos DotNet 3.1, nodeJs e SQLServer
 
 # :construction_worker: Como rodar
 
@@ -53,7 +55,8 @@ $ cd AngularWebAPIDotNet/AppAngular/
 
 
 # Rode a aplicação front-end
-$  npm i
+$ npm i
+$ npm add ngx-bootstrap
 $ npx ng serve
 
 #Abra outra terminal navegue até a pasta do back-end
@@ -67,6 +70,12 @@ $ dotnet run
 #outros comandos
 $ sqllocaldb info
 $ dotnet ef migrations add criacaoBD
+$ dotnet ef database update
+
+$ dotnet add package Microsoft.EntityFrameworkCore
+$ dotnet add package Microsoft.EntityFrameworkCore.Relational
+$ dotnet add package Microsoft.EntityFrameworkCore.Tools
+$ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 ````
 
 Acesse: http://localhost:4200/pessoas para ver o resultado.
@@ -80,12 +89,7 @@ Acesse: http://localhost:4200/pessoas para ver o resultado.
 
 Confira a página de [contribuição](./CONTRIBUTING.md) para ver como começar uma discução e começar a contribuir.
 
-# :closed_book: Licencia
-
-Lançado em 2022 :closed_book: Licencia
-
 Feito com amor por [JoãoFerreiraNeto](https://github.com/joaofnetojfn) 🚀.
-Esse projeto esta sobre [MIT license](./LICENSE).
 
 <br/> :email: &nbsp; Entre em contato comigo: [![Linkedin Badge](https://img.shields.io/badge/-JoaoFerreira-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/joaoferreiraneto/)](https://www.linkedin.com/in/joaoferreiraneto/)
 [![Gmail Badge](https://img.shields.io/badge/-joaofnetojfn@hotmail.com-c14438?style=flat-square&logo=Hotmail&logoColor=white&link=mailto:joaofnetojfn@hotamil.com)](mailto:joaofnetojfn@hotmail.com)
