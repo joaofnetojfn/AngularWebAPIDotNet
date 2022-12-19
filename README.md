@@ -85,10 +85,6 @@ Acesse: http://localhost:4200/pessoas para ver o resultado.
 [LocalDb](https://github.com/dbeaver/dbeaver/issues/2959)
 [Migrations](https://www.youtube.com/watch?v=sYLfDaDQdm4)
 
-# :tada: Contribuindo
-
-Confira a página de [contribuição](./CONTRIBUTING.md) para ver como começar uma discução e começar a contribuir.
-
 Feito com amor por [JoãoFerreiraNeto](https://github.com/joaofnetojfn) 🚀.
 
 <br/> :email: &nbsp; Entre em contato comigo: [![Linkedin Badge](https://img.shields.io/badge/-JoaoFerreira-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/joaoferreiraneto/)](https://www.linkedin.com/in/joaoferreiraneto/)
