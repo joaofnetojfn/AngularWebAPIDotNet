@@ -67,6 +67,10 @@ $ cd CRUDAPI/
 
 #Rode a aplicação back-end
 $ dotnet run
+
+#outros comandos
+$ sqllocaldb info
+$ dotnet ef migrations add criacaoBD
 ````
 
 Acesse: http://localhost:4200/pessoas para ver o resultado.
